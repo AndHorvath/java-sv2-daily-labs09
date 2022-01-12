@@ -23,11 +23,10 @@ public class Concert {
     // --- public methods -----------------------------------------------------
 
     public void addPerson(Person person, LocalTime localTime) {
-        if (person.getTicket().entryTime().isBefore(localTime)) {
-            people.add(person);
-        } else {
+        if (localTime.isBefore(person.getTicket().entryTime())) {
             throw new IllegalArgumentException(
                 "No entry at specified time with specified ticket.");
         }
+        people.add(person);
     }
 }

@@ -23,6 +23,6 @@ public class FrontOfStageTicket extends Ticket {
     // --- public methods -----------------------------------------------------
 
     public LocalTime entryTime() {
-        return LocalTime.of(getDateTime().getHour() - 2, getDateTime().getMinute());
+        return super.entryTime().minusHours(1);
     }
 }
