@@ -20,12 +20,12 @@ public class Caesar extends Encryption {
 
     @Override
     public String encrypt(String input) {
-        int defaultTranslation = 'a' - 1;
+        int initialTranslation = 'a' - 1;
         int alphabetSpan = 'z' - 'a' + 1;
         StringBuilder encrypted = new StringBuilder();
         for (char character : input.toLowerCase().toCharArray()) {
             encrypted.append(Character.toString(
-                (character - defaultTranslation + offset) % alphabetSpan + defaultTranslation));
+                (character - initialTranslation + offset) % alphabetSpan + initialTranslation));
         }
         return encrypted.toString();
     }
